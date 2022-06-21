@@ -6,8 +6,8 @@ pipelines:
     lock_behavior: none
     display_order: -1
     environment_variables:
-      VERSION: V.1.0
-      IMAGE: chokkalingamk/hello-world
+      VERSION: V.2.0
+      IMAGE: chokkalingamk/sampleapp
     materials:
       git-f89a4ee:
         git: https://github.com/chokkalingamk/sampleapp.git
@@ -21,14 +21,15 @@ pipelines:
         fetch_materials: true
         keep_artifacts: false
         clean_workspace: false
-        secure_variables:
-          DOCKER_USERNAME: AES:NT7sf918EkHgNclag5QSoA==:5GHy/cSFJSyx8JVgT3JMFw==
-          DOCKER_PASSWORD: AES:vi0j1RvsOeNUc7DYl6I2sw==:LCzbSm5ZCeR3FlC+1U7tE+V+CVHJci3nEXr4jV2Xq0T6cEn5yWNNUpzWiRLJs8nw
+
         approval:
           type: success
           allow_only_on_success: false
         jobs:
           build_and_push:
+            secure_variables:
+              DOCKER_USERNAME: AES:NT7sf918EkHgNclag5QSoA==:5GHy/cSFJSyx8JVgT3JMFw==
+              DOCKER_PASSWORD: AES:vi0j1RvsOeNUc7DYl6I2sw==:LCzbSm5ZCeR3FlC+1U7tE+V+CVHJci3nEXr4jV2Xq0T6cEn5yWNNUpzWiRLJs8nw``
             timeout: 0
             tasks:
             - exec:
