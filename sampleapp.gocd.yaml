@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  HELLO_WORLD_SP0:
+  SAMPLE-APPLICATION:
     group: IDFC_SPARK_SP0
     label_template: ${COUNT}
     lock_behavior: none
