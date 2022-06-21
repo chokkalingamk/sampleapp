@@ -16,7 +16,7 @@ start:
 	docker run -it --rm ${NAME}:${VERSION}/bin/bash
 
 login:
-	echo $(DOCKER_PASSWORD) | docker login -u $(DOCKER_NAME) --password-stdin
+	echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_NAME} --password-stdin
 
 push:	login build-version tag-latest
 	docker push ${NAME}:${VERSION}; docker push ${NAME}:latest
