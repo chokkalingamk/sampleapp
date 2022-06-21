@@ -7,7 +7,7 @@ pipelines:
     display_order: -1
     environment_variables:
       VERSION: V.1.0
-      IMAGE: sahanan05/hello-world
+      IMAGE: chokkalingamk/hello-world
     materials:
       git-f89a4ee:
         git: https://github.com/chokkalingamk/sampleapp.git
