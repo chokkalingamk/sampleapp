@@ -42,7 +42,7 @@ pipelines:
                 - -c
                 - make build
                 command: /bin/bash
-                working_directory: ./
+                working_directory:
                 run_if: passed
             - exec:
                 arguments:
