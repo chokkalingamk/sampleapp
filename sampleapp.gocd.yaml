@@ -28,8 +28,8 @@ pipelines:
           build_and_push:
             timeout: 0
             secure_variables:
-              DOCKER_USERNAME: AES:yvONSHWM+k0NuJvUDY9egA==:O66N1q5EIZ/C7wTMecHwKQ==
-              DOCKER_PASSWORD: AES:hXrQiVxBkZO/2NJvwKcKeA==:0sCLJ/jaSqc1M3cNbmzeQQ==
+              DOCKER_USERNAME: AES:NT7sf918EkHgNclag5QSoA==:5GHy/cSFJSyx8JVgT3JMFw==
+              DOCKER_PASSWORD: AES:6jj99u6udQumTaYG5MEbyQ==:zL8AOXdxNARA18mrI8ncKg0V4OfqQsGpBRP2fPQv/K+js6JLNcK+lFlQlEK93B+D
             tasks:
             - exec:
                 arguments:
