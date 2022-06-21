@@ -15,7 +15,7 @@ pipelines:
         shallow_clone: false
         auto_update: true
         branch: main
-        encrypted_password: AES:ao/CBvxg0N8d3jwwOFZnUA==:5u4uZiWqUJ4WsfMJXVupqoy4bC8Jl+0up9T31iz6rFhbXSRUT3/5X9hMmeGPgrJe
+        encrypted_password: AES:N3H/mksDG6JoIBkZ3ExyEA==:U3AwLLdTtNKyz4znCsaHiR8Cp8guH0tFlmcpymyQvIwn9XsEPZ/t6EeKsLTUXd58
     stages:
     - build_and_push:
         fetch_materials: true
