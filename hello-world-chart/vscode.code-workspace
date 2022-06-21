@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../../../Clients/LNTECC/Yaml_Files"
+		},
+		{
+			"path": "../../../Clients/LNTECC/Doapp_Terraform_Automationscripts_Final"
+		},
+		{
+			"path": "../../../Clients/freelancing"
+		},
+		{
+			"path": "../../../BootLabs/Training/terraform"
+		},
+		{
+			"path": "../../../Clients/LNTECC/Scripts"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../TataCliQ/Terraform_Codebase"
+		},
+		{
+			"path": "../../../IDFC"
+		}
+	]
+}
