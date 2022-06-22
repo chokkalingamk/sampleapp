@@ -1,7 +1,7 @@
 format_version: 10
 pipelines:
   SAMPLEAPP-YAML-PIPELINE:
-    group: IDFC_SPARK_SP0_YAML
+    group: IDFC_SPARK_SP0
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
