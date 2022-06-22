@@ -50,6 +50,7 @@ pipelines:
                 - -c
                 - make push
                 command: /bin/bash
+                working_directory:
                 run_if: passed
 #     - release:
 #         fetch_materials: true
