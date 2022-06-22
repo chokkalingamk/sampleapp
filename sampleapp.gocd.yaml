@@ -52,51 +52,51 @@ pipelines:
                 command: /bin/bash
                 working_directory:
                 run_if: passed
-#     - release:
-#         fetch_materials: true
-#         keep_artifacts: false
-#         clean_workspace: false
-#         approval:
-#           type: success
-#           allow_only_on_success: true
-#           secure_variables:
-#             AWS_ACCESS_KEY_ID: AES:dguqVdJEzKa11zLVse9TPg==:jFy/T70ifoqzjrk3XWxkTg==
-#             AWS_SECRET_ACCESS_KEY: AES:8KS2Gc2vEUMiZ5kpUp6Bhg==:xvnsbNPGAqM0ajL+/x8qDQ==
-# #              AWS_SESSION_TOKEN: IQoJb3JpZ2luX2VjEJf//////////wEaDGV1LWNlbnRyYWwtMSJIMEYCIQDRcumTmWvwwIb2hnh0MnBbYBLnE9eMMdi2irfAezvSxwIhAOY7dH5V1IqJMzYPPFf+fdhhkUZrI5A1P/ECZg5cZ6qrKqIDCKD//////////wEQARoMNDY3MTgxNzI1MTE4Igw/Iqd9mEYmXDlTY3Iq9gJUOFWaDf5FMdiDjgRRHBUUJzLmYHM38YnTrLsD/bmhJ9GyDh4fFk9Ipng0KGoygyj8Xs2KsJpLjf8QrB57NiTnzUJnaTvgxPhO3YtAdGS8qt0CWrWaMcpvZEwpKrolubvuowCildW7TfcJab+T2Grh7tINB7g5vBf5ibaQBJfDgCFj66/tCCvcID26LvSFtYfc3c+8MJVokyiqr/wfZwp69z8xcU+sInc640MCxyPEKYAwvS2jRpfGukUw2YJhXfLtMk9t9d6q5vwFJqo44KHsi40joBZg634uaRBcQVH204UayhhDspttaLvA6zgGLPgqSM4drXKeGfYWMafNYb+8xzp84ms8TszQRf+FjQtUmTS6g8SZEr/ioMe715TrcXxAkUnb6/G22O42oFKCzoE6Jrg4qKCPWReyHoUliKzo/VUaVBJGb1JP87IoAAj9tTsGCD394qTArlI6HhSCMIedQjV1E9hJCb0eDikBCEA5Mrwzf4jgeTDo/6WVBjqlAdbm7rF3T/zkrNcaNyuUpy8Lh57O/Lj6qMppGKtRmWSlhOitFr4tAGjTpvneB6TKMlG8UivGpQ3F6QvGLIwD7zqXliE5e8VRFcNlEZxHvKqL+/UDHjjHGNWmOqBdjTo1lIvd91+Wb+67dCT4EW+BdEJvzmxGdCIhmfk28bGT2kW7jmadEejJQsesLeMWKWF9ZUsUhd59j/GGP1qDkPzPsmTDp+lTIg==
-#         jobs:
-#           release:
-#             timeout: 0
-#             tasks:
-#             - exec:
-#                 arguments:
-#                 - -c
-#                 - sed -ri 's/\$TAG/'"$VERSION.$GO_PIPELINE_LABEL"'/' values.yaml
-#                 command: /bin/bash
-#                 working_directory: ./hello-world-chart
-#                 run_if: passed
-#             - exec:
-#                 arguments:
-#                 - eks
-#                 - --region
-#                 - ap-south-1
-#                 - update-kubeconfig
-#                 - --name
-#                 - dev-cluster
-#                 command: aws
-#                 run_if: passed
-#             - exec:
-#                 arguments:
-#                 - lint
-#                 - .
-#                 command: helm
-#                 working_directory: ./hello-world-chart
-#                 run_if: passed
-#             - exec:
-#                 arguments:
-#                 - upgrade
-#                 - --install
-#                 - hello-world-chart
-#                 - .
-#                 command: helm
-#                 working_directory: ./hello-world-chart
-#                 run_if: passed
+    - release:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: true
+          secure_variables:
+            AWS_ACCESS_KEY_ID: AES:PU4ksIZuzM3msZlrV9BBgg==:ad83TzZ2+8nrKTIulJ+VcjaN1hbkHpXysjBXcz61t8w=
+            AWS_SECRET_ACCESS_KEY: AES:Arw+cwh3IBCpDPghnojAnA==:X/LwovoeJ2IL4s95D/tXcbc/CwuEX3iX+gZViCSBAFNIkgU/8BSSekbxYPIxGD0E
+#              AWS_SESSION_TOKEN: IQoJb3JpZ2luX2VjEJf//////////wEaDGV1LWNlbnRyYWwtMSJIMEYCIQDRcumTmWvwwIb2hnh0MnBbYBLnE9eMMdi2irfAezvSxwIhAOY7dH5V1IqJMzYPPFf+fdhhkUZrI5A1P/ECZg5cZ6qrKqIDCKD//////////wEQARoMNDY3MTgxNzI1MTE4Igw/Iqd9mEYmXDlTY3Iq9gJUOFWaDf5FMdiDjgRRHBUUJzLmYHM38YnTrLsD/bmhJ9GyDh4fFk9Ipng0KGoygyj8Xs2KsJpLjf8QrB57NiTnzUJnaTvgxPhO3YtAdGS8qt0CWrWaMcpvZEwpKrolubvuowCildW7TfcJab+T2Grh7tINB7g5vBf5ibaQBJfDgCFj66/tCCvcID26LvSFtYfc3c+8MJVokyiqr/wfZwp69z8xcU+sInc640MCxyPEKYAwvS2jRpfGukUw2YJhXfLtMk9t9d6q5vwFJqo44KHsi40joBZg634uaRBcQVH204UayhhDspttaLvA6zgGLPgqSM4drXKeGfYWMafNYb+8xzp84ms8TszQRf+FjQtUmTS6g8SZEr/ioMe715TrcXxAkUnb6/G22O42oFKCzoE6Jrg4qKCPWReyHoUliKzo/VUaVBJGb1JP87IoAAj9tTsGCD394qTArlI6HhSCMIedQjV1E9hJCb0eDikBCEA5Mrwzf4jgeTDo/6WVBjqlAdbm7rF3T/zkrNcaNyuUpy8Lh57O/Lj6qMppGKtRmWSlhOitFr4tAGjTpvneB6TKMlG8UivGpQ3F6QvGLIwD7zqXliE5e8VRFcNlEZxHvKqL+/UDHjjHGNWmOqBdjTo1lIvd91+Wb+67dCT4EW+BdEJvzmxGdCIhmfk28bGT2kW7jmadEejJQsesLeMWKWF9ZUsUhd59j/GGP1qDkPzPsmTDp+lTIg==
+        jobs:
+          release:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - -c
+                - sed -ri 's/\$TAG/'"$VERSION.$GO_PIPELINE_LABEL"'/' values.yaml
+                command: /bin/bash
+                working_directory: ./hello-world-chart
+                run_if: passed
+            - exec:
+                arguments:
+                - eks
+                - --region
+                - ap-south-1
+                - update-kubeconfig
+                - --name
+                - dev-cluster
+                command: aws
+                run_if: passed
+            - exec:
+                arguments:
+                - lint
+                - .
+                command: helm
+                working_directory: ./hello-world-chart
+                run_if: passed
+            - exec:
+                arguments:
+                - upgrade
+                - --install
+                - hello-world-chart
+                - .
+                command: helm
+                working_directory: ./hello-world-chart
+                run_if: passed
