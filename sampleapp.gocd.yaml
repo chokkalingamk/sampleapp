@@ -6,7 +6,7 @@ pipelines:
     lock_behavior: none
     display_order: -1
     environment_variables:
-      VERSION: V.2.0
+      VERSION: V.2.1
       IMAGE: chokkalingamk/sampleapp
     materials:
       git-f89a4ee:
@@ -21,14 +21,13 @@ pipelines:
         fetch_materials: true
         keep_artifacts: false
         clean_workspace: false
-
         approval:
           type: success
           allow_only_on_success: false
         jobs:
           build_and_push:
             secure_variables:
-              DOCKER_USERNAME: AES:NT7sf918EkHgNclag5QSoA==:5GHy/cSFJSyx8JVgT3JMFw==
+              DOCKER_USERNAME: AES:iPv3J5Uy+Np7kUEB9rBqUg==:OLc4nO8TXdm6ADdE1cs1Dg==
               DOCKER_PASSWORD: AES:/a3i4IWAAKcNtABXE37x9Q==:VHD2EFoX897s5rjWmJqo4E7BNiDda0cL81kF/MBXDEHB+QtxOaFoXLvrivYuyUAn
             timeout: 0
             tasks:
