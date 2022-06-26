@@ -20,5 +20,5 @@ login:
 	echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
 #	docker login -u ${DOCKER_NAME} -p ${DOCKER_PASSWORD}
 
-push:	login build-version tag-latest
+push:	login tag-latest
 	docker push ${IMAGE}:${VERSION}; docker push ${IMAGE}:latest
