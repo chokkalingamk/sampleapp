@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: sahanan05/hello-world
+  repository: nginxdemos/hello
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "$TAG"
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
