@@ -49,6 +49,9 @@ jobs:
     - name: Modify the Tag
       working-directory: ./hello-world-chart
       run: sed -ri 's/\$TAG/'"$VERSION"'/' values.yaml
+    - name: Modify the Tag
+      working-directory: ./hello-world-chart
+      run: cat values.yaml | grep -i tag
     - name: Deploy to minikube
       working-directory: ./hello-world-chart
       run: helm upgrade --install hello-world-chart .
