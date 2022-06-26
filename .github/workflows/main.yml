@@ -51,7 +51,9 @@ jobs:
       run: sed -ri 's/\$TAG/'"$VERSION"'/' values.yaml
     - name: Modify the Tag
       working-directory: ./hello-world-chart
-      run: cat values.yaml | grep -i tag
+      run: |
+        kubectl get pods -o wide
+        kubectl get svc -o wide
     - name: Deploy to minikube
       working-directory: ./hello-world-chart
       run: helm upgrade --install hello-world-chart .
