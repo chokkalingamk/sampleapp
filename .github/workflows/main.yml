@@ -46,6 +46,9 @@ jobs:
       uses: medyagh/setup-minikube@master
     - name: Try the cluster !
       run: kubectl get pods -A
+    - name: Modify the Tag
+      working-directory: ./hello-world-chart
+      run: sed -ri 's/\$TAG/'"$VERSION"'/' values.yaml
     - name: Deploy to minikube
       working-directory: ./hello-world-chart
       run: helm upgrade --install hello-world-chart .
