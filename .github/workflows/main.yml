@@ -37,6 +37,7 @@ jobs:
           make push
 
   MINIKUBE:
+    needs: [BUILD_PUSH]
     runs-on: ubuntu-latest
     name: build example and deploy to minikube
     steps:
