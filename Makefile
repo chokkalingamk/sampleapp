@@ -1,6 +1,7 @@
 #IMAGE = chokkalingamk/testapplication
 #DOCKER_IMAGE = $(DOCKER_IMAGE)
 #VERSION = $(shell date +%Y%m%d)
+include *.env
 
 .PHONY: build start push
 
