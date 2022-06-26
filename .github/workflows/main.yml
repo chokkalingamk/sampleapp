@@ -46,12 +46,12 @@ jobs:
       uses: medyagh/setup-minikube@master
     - name: Try the cluster !
       run: kubectl get pods -A
-    - name: Modify the Tag
-      working-directory: ./hello-world-chart
-      run: sed -ri 's/\$TAG/'"$VERSION"'/' values.yaml
-    - name: Deploy to minikube
-      working-directory: ./hello-world-chart
-      run: helm upgrade --install hello-world-chart .
+#     - name: Modify the Tag
+#       working-directory: ./hello-world-chart
+#       run: sed -ri 's/\$TAG/'"$VERSION"'/' values.yaml
+#     - name: Deploy to minikube
+#       working-directory: ./hello-world-chart
+#       run: helm upgrade --install hello-world-chart .
 #     - name: Build image
 #       run: |
 #         export SHELL=/bin/bash
@@ -59,9 +59,9 @@ jobs:
 #         docker build -f ./Dockerfile -t local/example .
 #         echo -n "verifying images:"
 #         docker images        
-#     - name: Deploy to minikube
-#       run:
-#         kubectl apply -f deploy-to-minikube.yaml
+    - name: Deploy to minikube
+      run:
+        kubectl apply -f deploy-to-minikube.yaml
     - name: Get pod and services
       working-directory: ./hello-world-chart
       run: |
@@ -70,6 +70,6 @@ jobs:
     - name: Test service URLs
       run: |
         minikube service list
-        minikube service hello-world-chart --url
+        minikube service example --url
         echo "------------------opening the service------------------"
-        curl $(minikube service hello-world-chart --url)        
+        curl $(minikube service example --url)    
