@@ -39,7 +39,7 @@ jobs:
   MINIKUBE:
     needs: [BUILD_PUSH]
     runs-on: ubuntu-latest
-    name: build example and deploy to minikube
+#     name: build example and deploy to minikube
     steps:
     - uses: actions/checkout@v2
     - name: Start minikube
@@ -64,4 +64,4 @@ jobs:
         minikube service list
         minikube service example --url
         echo "------------------opening the service------------------"
-        curl $(minikube service example --url)        
+        curl $(minikube service hello-world-chart --url)        
